@@ -64,10 +64,7 @@ module.exports = {
 ```
 ```javascript
 var config = require("./config")
-var conveyorBelt = require("conveyorBelt")({
-    development: config.development,
-    production: config.production
-}, process.env.NODE_ENV)
+var conveyorBelt = require("conveyorBelt")(config, process.env.NODE_ENV)
 
 ```
 It's entirely up to you how you name your environments (you don't have to call them "development" and "production") and you can have as many as you want (e.g. add "staging"). Same applies for the keys inside each environment ("scripts", "styles", etc), as long as the value is an array of strings (paths or globs). Here's the general format:
