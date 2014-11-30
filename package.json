@@ -1,26 +1,30 @@
 {
-    "name": "conveyor-belt",
-    "version": "0.0.1",
-    "author": "Svilen Gospodinov <svilen.gospodinov@gmail.com>",
-    "description": "Flexible asset management for Node/Express, using globs and compatible with Gulp.",
-    "main": "index.js",
-    "scripts": {
-        "test": "gulp mocha"
-    },
-    "keywords": [
-        "asset",
-        "management"
-    ],
-    "dependencies": {
-        "debug": "^2.1.0",
-        "globby": "^1.0.0"
-    },
-    "devDependencies": {
-        "chai": "^1.10.0",
-        "gulp": "^3.8.10",
-        "gulp-6to5": "^1.0.2",
-        "gulp-mocha": "^2.0.0",
-        "gulp-util": "^3.0.1"
-    },
-    "license": "MIT"
+  "name": "conveyor-belt",
+  "version": "0.0.1",
+  "author": "Svilen Gospodinov <svilen.gospodinov@gmail.com>",
+  "description": "Flexible asset management for Node/Express, using globs and compatible with Gulp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp mocha"
+  },
+  "keywords": [
+    "asset",
+    "management"
+  ],
+  "dependencies": {
+    "debug": "^2.1.0",
+    "globby": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "coveralls": "^2.11.2",
+    "gulp": "^3.8.10",
+    "gulp-6to5": "^1.0.2",
+    "gulp-mocha": "^2.0.0",
+    "gulp-util": "^3.0.1",
+    "istanbul": "^0.3.2",
+    "mocha": "^2.0.1",
+    "mocha-lcov-reporter": "0.0.1"
+  },
+  "license": "MIT"
 }
