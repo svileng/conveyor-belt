@@ -1,4 +1,4 @@
-# conveyor-belt [![Build Status](https://travis-ci.org/svileng/conveyor-belt.svg?branch=master)](https://travis-ci.org/svileng/conveyor-belt)
+# conveyor-belt [![Build Status](https://travis-ci.org/svileng/conveyor-belt.svg?branch=master)](https://travis-ci.org/svileng/conveyor-belt) [![Coverage Status](https://img.shields.io/coveralls/svileng/conveyor-belt.svg)](https://coveralls.io/r/svileng/conveyor-belt?branch=master)
 > Flexible asset management for Node/Express, using globs and compatible with Gulp.
 
 ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment set as `NODE_ENV`. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
