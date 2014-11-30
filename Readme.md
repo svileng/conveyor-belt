@@ -1,7 +1,9 @@
 # conveyor-belt
 > Asset management for Node, using globs and compatible with Gulp.
 
-ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/). Written in ES6 for fun.
+ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
+
+Written in ES6 for fun and fully tested.
 
 ## Usage
 ```javascript
