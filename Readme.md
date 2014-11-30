@@ -1,7 +1,7 @@
 # conveyor-belt
-> Asset management for Node, using globs and compatible with Gulp.
+> Flexible asset management for Node/Express, using globs and compatible with Gulp.
 
-ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
+ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment set as `NODE_ENV`. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
 
 Written in ES6 for fun and fully tested.
 
@@ -16,14 +16,11 @@ var conveyorBelt = require("conveyorBelt")({
         scripts: [
             "bower/angular/angular.js"
             "assets/js/**/*.js",
-            "!assets/js/excluded.js"
+            "!excluded.js"
         ],
         styles: [
             "bower/normalize-css/normalize.css",
-            "assets/csss/**/*.css",
-        ],
-        sprite: [
-            "public/sprite-main.png"
+            "assets/css/**/*.css",
         ]
     },
     production: {
@@ -32,9 +29,6 @@ var conveyorBelt = require("conveyorBelt")({
         ],
         styles: [
             "public/app.min-*.css"
-        ],
-        sprite: [
-            "public/sprite-main.png"
         ]
     }
 }, process.env.NODE_ENV)
@@ -56,9 +50,6 @@ module.exports = {
         styles: [
             "bower/normalize-css/normalize.css",
             "assets/csss/**/*.css",
-        ],
-        sprite: [
-            "public/sprite-main.png"
         ]
     },
     production: {
@@ -67,9 +58,6 @@ module.exports = {
         ],
         styles: [
             "public/app.min-*.css"
-        ],
-        sprite: [
-            "public/sprite-main.png"
         ]
     }
 }
@@ -116,8 +104,7 @@ var conveyorBelt = require("conveyorBelt")({
 }, "superman")
 
 ```
-
-After attaching the middleware, asset groups will be available as local variables in the view, so you can render them. Here's an example with `Jade` that assumes you've specified `scripts` and `styles` in your environment config:
+After attaching the middleware, asset groups will be available as local variables in the view, so you can render them. Here's an example with Jade that assumes you've specified `scripts` and `styles` in your environment config:
 
 ```jade
 doctype html
@@ -138,6 +125,8 @@ html
         each thing in powers
             img(src="/#{thing}")
 ```
+If you have the same keys in all environment configs ("scripts", etc) then the same code will work in all environments.
+
 ## Contributions
 Any pull requests are more than welcome. Please make your changes in your own branch, make sure the current tests are passing (run with `gulp mocha`) and update/add tests if necessary. Run `gulp` to get your ES6 code transpiled to ES5.
 
