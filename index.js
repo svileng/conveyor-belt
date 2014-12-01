@@ -1,4 +1,4 @@
-var conveyorBelt = require("./lib/conveyorBelt.js")
+var conveyorBelt = require("./dist/conveyorBelt.js")
 
 module.exports = function() {
     return conveyorBelt
