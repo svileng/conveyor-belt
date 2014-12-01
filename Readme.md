@@ -1,9 +1,9 @@
 # conveyor-belt [![Build Status](https://travis-ci.org/svileng/conveyor-belt.svg?branch=master)](https://travis-ci.org/svileng/conveyor-belt) [![Coverage Status](https://img.shields.io/coveralls/svileng/conveyor-belt.svg)](https://coveralls.io/r/svileng/conveyor-belt?branch=master)
 > Flexible asset management for Node/Express, using globs and compatible with Gulp.
 
-ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment set as `NODE_ENV`. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
+ConveyorBelt is a simple Node module for Express, that helps you serve the right front-end assets, depending on the current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
 
-Written in ES6 for fun and fully tested.
+Written in ES6 for fun.
 
 ## Usage
 ```javascript
@@ -36,7 +36,9 @@ var conveyorBelt = require("conveyorBelt")({
 // Attach as an Express middleware.
 app.use(conveyorBelt.middleware)
 
-// Job done. Assets defined above are now set as local variables to use in the view. Globs will be expanded to full paths.
+// Job done.
+// Assets defined above are available as local variables in the view.
+// Globs will be expanded to full paths.
 ```
 Optional - separate environment configs into a separate module (e.g. `config.js`):
 ```javascript
@@ -125,7 +127,7 @@ html
 If you have the same keys in all environment configs ("scripts", etc) then the same code will work in all environments.
 
 ## Contributions
-Any pull requests are more than welcome. Please make your changes in your own branch, make sure the current tests are passing (run with `gulp mocha`) and update/add tests if necessary. Run `gulp` to get your ES6 code transpiled to ES5.
+Pull requests are more than welcome. Please make your changes in your own branch, make sure the current tests are passing (run with `gulp mocha`) and update/add tests if necessary. Run `gulp` to get your ES6 code transpiled to ES5.
 
 ## Contributors
 
