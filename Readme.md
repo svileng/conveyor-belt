@@ -37,8 +37,9 @@ var conveyorBelt = require("conveyorBelt")({
 app.use(conveyorBelt.middleware)
 
 // Job done.
-// Assets defined above are available as local variables in the view.
-// Globs will be expanded to full paths.
+// Assets defined above will be available in
+// a local variable called "assets" in the view, so just
+// make sure you set the right NODE_ENV before running the app.
 ```
 Optional - separate environment configs into a separate module (e.g. `config.js`):
 ```javascript
@@ -103,17 +104,18 @@ var conveyorBelt = require("conveyorBelt")({
 }, "superman")
 
 ```
-After attaching the middleware, asset groups will be available as local variables in the view, so you can render them. Here's an example with Jade that assumes you've specified `scripts` and `styles` in your environment config:
+## Rendering
+After attaching the middleware, you can access the `assets` variable in your templates (set on [res.locals](http://expressjs.com/4x/api.html#res.locals)). It will contain the same keys in your environment config. Here's an example with Jade that assumes you've specified `scripts` and `styles` in your environment config:
 
 ```jade
 doctype html
 html
     head
-        each style in styles
+        each style in assets.styles
             link(rel='stylesheet', href="/#{style}")
 
     body
-        each script in scripts
+        each script in assets.scripts
             script(src="/#{script}")
 ```
 Or if you take the superman example before that:
@@ -121,7 +123,7 @@ Or if you take the superman example before that:
 doctype html
 html
     body
-        each thing in powers
+        each thing in assets.powers
             img(src="/#{thing}")
 ```
 If you have the same keys in all environment configs ("scripts", etc) then the same code will work in all environments.
