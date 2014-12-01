@@ -3,19 +3,19 @@ let debug = require("debug")("conveyorBelt:main")
 
 class ConveyorBelt {
 
-    // Main constructor.
     constructor(config, env) {
         if (env === undefined || env === null) {
             throw new Error("You must pass an 'env' option for current environment")
         }
 
-        // Store current assets config
+        // Store current assets config.
         this.config = config
 
-        // Initialise assets according to current environment.
+        // Set passed environment as current and process assets.
         this.changeEnv(env)
     }
 
+    // Sets given env as current and processes assets for it.
     changeEnv(env) {
         if (this.config[env] === undefined ) {
             throw new Error("No supplied config for current environment")
@@ -25,7 +25,7 @@ class ConveyorBelt {
         this.assets = this.getAssets(this.config[env])
     }
 
-    // Matches patterns and returns file paths for the supplied environment.
+    // Expands all patterns/globs and returns file paths.
     getAssets(assets) {
         if (assets === undefined || assets === null) {
             throw new Error("Current assets config is either null or undefined")

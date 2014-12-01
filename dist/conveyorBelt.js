@@ -9,24 +9,24 @@ var globby = require("globby");
 var debug = require("debug")("conveyorBelt:main");
 
 var ConveyorBelt = (function () {
-  var ConveyorBelt =
-
-  // Main constructor.
-  function ConveyorBelt(config, env) {
+  var ConveyorBelt = function ConveyorBelt(config, env) {
     if (env === undefined || env === null) {
       throw new Error("You must pass an 'env' option for current environment");
     }
 
-    // Store current assets config
+    // Store current assets config.
     this.config = config;
 
-    // Initialise assets according to current environment.
+    // Set passed environment as current and process assets.
     this.changeEnv(env);
   };
 
   _classProps(ConveyorBelt, null, {
     changeEnv: {
       writable: true,
+
+
+      // Sets given env as current and processes assets for it.
       value: function (env) {
         if (this.config[env] === undefined) {
           throw new Error("No supplied config for current environment");
@@ -40,7 +40,7 @@ var ConveyorBelt = (function () {
       writable: true,
 
 
-      // Matches patterns and returns file paths for the supplied environment.
+      // Expands all patterns/globs and returns file paths.
       value: function (assets) {
         if (assets === undefined || assets === null) {
           throw new Error("Current assets config is either null or undefined");
