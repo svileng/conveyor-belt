@@ -4,6 +4,8 @@
   "author": "Svilen Gospodinov <svilen.gospodinov@gmail.com>",
   "description": "Flexible asset management for Node/Express, using globs and compatible with Gulp.",
   "main": "index.js",
+  "homepage": "https://github.com/svileng/conveyor-belt",
+  "repository": "svileng/conveyor-belt",
   "scripts": {
     "test": "gulp mocha"
   },
