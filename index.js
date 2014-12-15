@@ -1,5 +1,5 @@
-var conveyorBelt = require("./dist/conveyorBelt")
+var ConveyorBelt = require("./dist/conveyorBelt")
 
-module.exports = function() {
-    return conveyorBelt
+module.exports = function(config, env) {
+    return new ConveyorBelt(config, env)
 }

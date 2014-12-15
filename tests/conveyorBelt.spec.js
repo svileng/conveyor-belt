@@ -2,42 +2,42 @@ var expect = require("chai").expect
 var debug = require("debug")("conveyorBeltTests")
 
 describe("ConveyorBelt", function() {
-    var conveyorBelt = null
+    var ConveyorBelt = null
     var instance = null
 
     describe("with wrong config", function() {
 
         beforeEach(function() {
-            conveyorBelt = require("../dist/conveyorBelt")
+            ConveyorBelt = require("../index")
         })
 
         it("throws if current environment is not passed", function() {
             expect(function() {
-                conveyorBelt({foo: {bar: ["baz"]}})
+                ConveyorBelt({foo: {bar: ["baz"]}})
             }).to.throw()
 
             expect(function() {
-                conveyorBelt({foo: {bar: ["baz"]}}, "foo")
+                ConveyorBelt({foo: {bar: ["baz"]}}, "foo")
             }).not.to.throw()
         })
 
         it("throws if property of assets config is not an array", function() {
             expect(function() {
-                conveyorBelt({foo: {config: "baz"}}, "foo")
+                ConveyorBelt({foo: {config: "baz"}}, "foo")
             }).to.throw()
 
             expect(function() {
-                conveyorBelt({foo: {config: ["baz"]}}, "foo")
+                ConveyorBelt({foo: {config: ["baz"]}}, "foo")
             }).not.to.throw()
         })
 
         it("throws if current env doesn't have defined assets", function() {
             expect(function() {
-                conveyorBelt({production: {foo: ["bar"]}}, "foobar")
+                ConveyorBelt({production: {foo: ["bar"]}}, "foobar")
             }).to.throw()
 
             expect(function() {
-                conveyorBelt({production: {foo: ["bar"]}}, "production")
+                ConveyorBelt({production: {foo: ["bar"]}}, "production")
             }).not.to.throw()
         })
     })
@@ -69,8 +69,7 @@ describe("ConveyorBelt", function() {
         }
 
         beforeEach(function() {
-            conveyorBelt = require("../dist/conveyorBelt")
-            instance = conveyorBelt(config, "development")
+            instance = require("../index")(config, "development")
         })
 
         it("instantiates with supplied params", function() {

@@ -76,6 +76,4 @@ var ConveyorBelt = (function () {
   return ConveyorBelt;
 })();
 
-module.exports = function (options, env) {
-  return new ConveyorBelt(options, env);
-};
+module.exports = ConveyorBelt;

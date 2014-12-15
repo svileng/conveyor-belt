@@ -53,6 +53,4 @@ class ConveyorBelt {
     }
 }
 
-module.exports = (options, env) => {
-    return new ConveyorBelt(options, env)
-}
+module.exports = ConveyorBelt
