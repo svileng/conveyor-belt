@@ -6,9 +6,12 @@ ConveyorBelt is a simple Node module for Express, that helps you serve the right
 Written in ES6 for fun.
 
 ## Usage
+```bash
+npm install conveyor-belt --save
+```
 ```javascript
 // Get an instance by supplying a number of environment configurations and current environment.
-// Current environment must match at least one of the supplied environment configurations.
+// Current environment must match one of the supplied environment configurations.
 var conveyorBelt = require("conveyorBelt")({
     development: {
         scripts: [
