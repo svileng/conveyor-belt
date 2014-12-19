@@ -96,7 +96,7 @@ describe("ConveyorBelt", function() {
             expect(instance.assets.scripts).to.include("tests/mocks/app.min.js")
         })
 
-        it("works as middleware", function(done) {
+        it("has an Express-style middleware", function(done) {
             var req = {}
             var res = {locals: {}}
             var next = function() {
@@ -105,6 +105,27 @@ describe("ConveyorBelt", function() {
                 done()
             }
             instance.middleware(req, res, next)
+        })
+
+        it("throws if middleware is used without bind", function(done) {
+            var caller = function(func) {
+                var req = {}
+                var res = {locals: {}}
+                var next = function() {
+                    expect(res.locals.assets).not.to.be.undefined()
+                    expect(res.locals.assets).to.include.keys("scripts", "styles", "foobar")
+                    done()
+                }
+                func(req, res, next)
+            }
+
+            expect(function() {
+                caller(instance.middleware)
+            }).to.throw()
+
+            expect(function() {
+                caller(instance.middleware.bind(instance))
+            }).not.to.throw()
         })
     })
 })
