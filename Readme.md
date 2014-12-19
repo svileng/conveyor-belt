@@ -12,7 +12,7 @@ npm install conveyor-belt --save
 ```javascript
 // Get an instance by supplying a number of environment configurations and current environment.
 // Current environment must match one of the supplied environment configurations.
-var conveyorBelt = require("conveyorBelt")({
+var conveyorBelt = require("conveyor-belt")({
     development: {
         scripts: [
             "bower/angular/angular.js"
@@ -76,7 +76,7 @@ module.exports = {
 ```
 ```javascript
 var config = require("./config")
-var conveyorBelt = require("conveyorBelt")(config, process.env.NODE_ENV)
+var conveyorBelt = require("conveyor-belt")(config, process.env.NODE_ENV)
 
 ```
 It's entirely up to you how you name your environments (you don't have to call them "development" and "production") and you can have as many as you want (e.g. add "staging"). Same applies for the keys inside each environment ("scripts", "styles", etc), as long as the value is an array of strings (paths or globs). Here's the general format:
@@ -104,7 +104,7 @@ It's entirely up to you how you name your environments (you don't have to call t
 ```
 So that's a perfectly valid config:
 ```javascript
-var conveyorBelt = require("conveyorBelt")({
+var conveyorBelt = require("conveyor-belt")({
     superman: {
         powers: [
             "path/to/powers/*.png"
