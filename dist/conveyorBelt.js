@@ -67,7 +67,9 @@ var ConveyorBelt = (function () {
 
       // Attach and set assets.
       value: function (req, res, next) {
-        console.assert(this !== undefined, "ConveyorBelt: Cannot insert middleware directly, use .bind(ConveyorBelt)");
+        if (this === undefined) {
+          throw new Error("ConveyorBelt: Cannot insert middleware directly, use .bind(ConveyorBelt)");
+        }
         res.locals.assets = this.assets;
         next();
       }
