@@ -1,6 +1,6 @@
 {
   "name": "conveyor-belt",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Svilen Gospodinov <svilen.gospodinov@gmail.com>",
   "description": "Flexible asset management for Node/Express, using globs and compatible with Gulp.",
   "main": "dist/index.js",
