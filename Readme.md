@@ -7,8 +7,6 @@ Written in ES6 for fun.
 
 ## Usage
 ```javascript
-var app = require("express")()
-
 // Get an instance by supplying a number of environment configurations and current environment.
 // Current environment must match at least one of the supplied environment configurations.
 var conveyorBelt = require("conveyorBelt")({
@@ -33,8 +31,16 @@ var conveyorBelt = require("conveyorBelt")({
     }
 }, process.env.NODE_ENV)
 
-// Attach as an Express middleware.
-app.use(conveyorBelt.middleware)
+// Set assets to be accessible to the view. If you're using Express:
+var app = require("express")()
+
+app.use(function(req, res, next) {
+    res.locals.assets = conveyorBelt.assets
+    next()
+})
+
+// Or if you want a one-liner, attach it as an Express middleware.
+// app.use(conveyorBelt.middleware.bind(conveyorBelt))
 
 // Job done.
 // Assets defined above will be available in

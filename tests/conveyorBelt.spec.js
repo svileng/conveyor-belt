@@ -8,7 +8,7 @@ describe("ConveyorBelt", function() {
     describe("with wrong config", function() {
 
         beforeEach(function() {
-            ConveyorBelt = require("../index")
+            ConveyorBelt = require("../dist/index")
         })
 
         it("throws if current environment is not passed", function() {
@@ -69,7 +69,7 @@ describe("ConveyorBelt", function() {
         }
 
         beforeEach(function() {
-            instance = require("../index")(config, "development")
+            instance = require("../dist/index")(config, "development")
         })
 
         it("instantiates with supplied params", function() {

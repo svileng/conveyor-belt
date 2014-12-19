@@ -48,9 +48,10 @@ class ConveyorBelt {
 
     // Attach and set assets.
     middleware(req, res, next) {
+        console.assert(this !== undefined, "ConveyorBelt: Cannot insert middleware directly, use .bind(ConveyorBelt)")
         res.locals.assets = this.assets
         next()
     }
 }
 
-module.exports = ConveyorBelt
+export default ConveyorBelt
