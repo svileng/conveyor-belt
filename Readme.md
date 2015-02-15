@@ -3,7 +3,7 @@
 
 Juggling different sets of assets for production, development, staging, etc? ConveyorBelt is a tiny Node.js module for loading different groups of front-end assets, depending on current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/), and you can use it with any build tool or Node framework.
 
-It's time to get rid of those `if (NODE_ENV == ...)` statements!
+It's time to get rid of those `if (NODE_ENV === ...)` statements!
 
 ## Usage
 ```bash
