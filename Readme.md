@@ -1,9 +1,9 @@
 # conveyor-belt [![Build Status](https://travis-ci.org/svileng/conveyor-belt.svg?branch=master)](https://travis-ci.org/svileng/conveyor-belt) [![Coverage Status](https://img.shields.io/coveralls/svileng/conveyor-belt.svg)](https://coveralls.io/r/svileng/conveyor-belt?branch=master) [![npm version](https://badge.fury.io/js/conveyor-belt.svg)](http://badge.fury.io/js/conveyor-belt)
-> Flexible asset management for Node/Express, using globs and compatible with Gulp.
+> Pure asset management for Node/Express, using globs and compatible with Gulp.
 
-ConveyorBelt is a simple Node module for loading different groups of front-end assets, depending on current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/).
+Juggling different sets of assets for production, development, staging, etc? ConveyorBelt is a tiny Node.js module for loading different groups of front-end assets, depending on current environment. It uses [globs](https://github.com/isaacs/node-glob#glob-primer) so it plays nicely with [Gulp](https://github.com/gulpjs/gulp/), and you can use it with any build tool or Node framework.
 
-Written in ES6 for fun.
+It's time to get rid of those `if (NODE_ENV == ...)` statements!
 
 ## Usage
 ```bash
