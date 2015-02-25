@@ -36,19 +36,18 @@ var conveyorBelt = require("conveyor-belt")({
 
 // Set assets to be accessible to the view. If you're using Express:
 var app = require("express")()
+app.locals.assets = conveyorBelt.assets
 
-app.use(function(req, res, next) {
-    res.locals.assets = conveyorBelt.assets
-    next()
-})
+// You can also set it on the actual response, per request:
+// app.use(function(req, res, next) {
+//     res.locals.assets = conveyorBelt.assets
+//     next()
+// })
 
-// Or if you want a one-liner, attach it as an Express middleware.
+// Or attach it as an Express middleware:
 // app.use(conveyorBelt.middleware.bind(conveyorBelt))
 
-// Job done.
-// Assets defined above will be available in
-// a local variable called "assets" in the view, so just
-// make sure you set the right NODE_ENV before running the app.
+// Job done. Paths are now available in the view!
 ```
 Optional - separate environment configs into a separate module (e.g. `config.js`):
 ```javascript
